@@ -1,0 +1,1 @@
+A mill repo for exercises while following along The Red Book.
