@@ -35,6 +35,8 @@ sealed trait Option[+A] {
     }*/
 
     def filter(f:A=>Boolean):Option[A] = this.flatMap( (a:A) => {if(f(a)) this else None:Option[A]} )
+
+    def isEmpty = { this == None }
 }
 
 object Option {

@@ -11,7 +11,10 @@ sealed trait Either[+E, +A] {
         case Left(e) => Left(e)
         /** the important thing is that
         I conveniently thought that simply `this` would work 
-        but we have to explicitly invoke the Left constructor*/
+        but we have to explicitly invoke the Left constructor
+        .
+        ask, why doesn't B need to be a supertype of A, as in orElse? 
+        is it because here a mapping exists from A, while in orElse, it doesn't*/
     }
 
     def orElse[EE >: E, B >: A](b: => Either[EE, B]): Either[EE,B] = this match {
